@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Angular 2 QuickStart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" href="app/content/styles.css">
-    <!-- 1. Load libraries -->
+    <base href="/">
+    <title>Safe Pacs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -12,7 +13,14 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <!-- 2. Configure SystemJS -->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    
+    <!-- Add Bootstrap CSS -->
+    <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/content/styles.css">
+    
+    <!-- Configure SystemJS -->
     <script>
       System.config({
         packages: {        
