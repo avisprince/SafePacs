@@ -7,4 +7,6 @@ import {HomeGrid} from '../home-grid/home-grid.component';
     styleUrls: ['app/content/home.css'],
     directives: [HomeGrid]
 })
-export class HomeComponent { }
+export class HomeComponent {
+    public credits: number = 8;
+}

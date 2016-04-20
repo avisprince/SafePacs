@@ -3,4 +3,5 @@ export interface Case {
     Caption: string;
     Owner: string;
     DiscoveryDate: Date;
+    ExpirationDate: Date;
 }

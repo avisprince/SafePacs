@@ -1,15 +1,20 @@
-<nav id="headerBar" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <a id="headerLogoContainer" class="pull-left">
-            <img id="headerLogo" src="app/images/name_tagline_tm.png" />
-        </a>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+<div class="container">
+    <div class="col-md-9">
+        <home-grid></home-grid>
+    </div>
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div style="font-size: 20px;">Case Credits: {{credits}}</div>
+            </li>
+            <li class="list-group-item">
+                <ul class="nav nav-stacked">
+                    <li style="margin-bottom: 5px;"><button type="button" class="btn btn-primary btn-block">Purchase</button></li>
+                    <li style="margin-bottom: 5px;"><button type="button" class="btn btn-primary btn-block">Add Case</button></li>
+                    <li style="margin-bottom: 5px;"><button type="button" class="btn btn-primary btn-block">Screen Share</button></li>
+                    <li style="margin-bottom: 5px;"><button type="button" class="btn btn-primary btn-block">Support</button></li>
+                </ul>
+            </li>
         </ul>
     </div>
-</nav>
-
-<div class="container" style="margin-top: 60px;">
-    <home-grid></home-grid>
 </div>

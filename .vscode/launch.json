@@ -18,7 +18,7 @@
 				"NODE_ENV": "development"
 			},
 			"externalConsole": false,
-			"sourceMaps": false,
+			"sourceMaps": true,
 			"outDir": null
 		},
 		{
@@ -28,10 +28,30 @@
 			"port": 5858,
 			"address": "localhost",
 			"restart": false,
-			"sourceMaps": false,
+			"sourceMaps": true,
 			"outDir": null,
 			"localRoot": "${workspaceRoot}",
 			"remoteRoot": null
 		}
 	]
 }
+
+// {
+//     "version": "0.1.0",
+//     "configurations": [
+//         {
+//             "name": "Launch localhost with sourcemaps",
+//             "type": "chrome",
+//             "request": "launch",
+//             "url": "http://localhost/index.html",
+//             "webRoot": "${workspaceRoot}/app",
+//             "sourceMaps": true
+//         },
+//         {
+//             "name": "Launch index.html (without sourcemaps)",
+//             "type": "chrome",
+//             "request": "launch",
+//             "file": "${workspaceRoot}/index.html"
+//         },
+//     ]
+// }
