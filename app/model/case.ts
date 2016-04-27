@@ -2,6 +2,6 @@ export interface Case {
     Id: number;
     Caption: string;
     Owner: string;
-    DiscoveryDate: Date;
-    ExpirationDate: Date;
+    DiscoveryDate: string;
+    ExpirationDate: string;
 }

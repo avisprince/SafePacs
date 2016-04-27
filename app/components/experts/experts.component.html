@@ -1,0 +1,24 @@
+<h1>Caraballo vs. Ventura-Campos</h1>
+<div class="container">
+    <div class="col-md-2">
+        <p-menu>
+            <ul>
+                <li><h3>File</h3></li>
+                <li><a data-icon="fa-plus"><span>New</span></a></li>
+                <li><a data-icon="fa-download"><span>Open</span></a></li>
+                <li><h3>Edit</h3></li>
+                <li><a data-icon="fa-refresh"><span>Undo</span></a></li>
+                <li><a data-icon="fa-repeat"><span>Redo</span></a></li>
+            </ul>
+        </p-menu>
+    </div>
+    <div class="col-md-10">
+        <p-dataTable [value]="cases">
+        <p-column field="Id" header="Id"></p-column>
+        <p-column field="Caption" header="Caption"></p-column>
+        <p-column field="Owner" header="Owner"></p-column>
+        <p-column field="DiscoveryDate" header="Discovery Date"></p-column>
+        <p-column field="ExpirationDate" header="Expiration Date"></p-column>
+        </p-dataTable>
+    </div>
+</div>

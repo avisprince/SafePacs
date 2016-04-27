@@ -1,50 +1,14 @@
-<div class="row" style="margin-bottom: 5px;">
-  <div class="col-md-7">
-    <div class="input-group">
-      <span class="input-group-addon">
-        <span class="glyphicon glyphicon-filter"></span>
-      </span>
-      <input type="text" class="form-control" placeholder="filter" [(ngModel)]="filter" />
-    </div>
-  </div>
-
-  <div class="col-md-5">
-    <div class="btn-group pull-right">
-      <button type="button" class="btn btn-default"
-          (click)="data.moveToFirstPage()"
-          [disabled]="data.pageIndex <= 0">
-          <span class="glyphicon glyphicon-fast-backward"></span>
-      </button>
-      <button type="button" class="btn btn-default"
-          (click)="data.moveToPreviousPage()"
-          [disabled]="data.pageIndex <= 0">
-          <span class="glyphicon glyphicon-step-backward"></span>
-      </button>
-      <!--<button type="button" class="btn btn-default" disabled style="width:100px">
-          {​{data.pageIndex + 1 | number}} / {​{data.pageCount | number}}
-      </button>-->
-      <button type="button" class="btn btn-default" disabled style="width:100px">
-          1 / 10
-      </button>
-      <button type="button" class="btn btn-default"
-          (click)="data.moveToNextPage()"
-          [disabled]="data.pageIndex >= data.pageCount - 1">
-          <span class="glyphicon glyphicon-step-forward"></span>
-      </button>
-      <button type="button" class="btn btn-default"
-          (click)="data.moveToLastPage()"
-          [disabled]="data.pageIndex >= data.pageCount - 1">
-          <span class="glyphicon glyphicon-fast-forward"></span>
-      </button>
-    </div>
-  </div>
+<div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+    <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+    <input #gb type="text" pInputText size="50" style="float:left" placeholder="Filter">
 </div>
- 
-<wj-flex-grid [itemsSource]="data" [style.height.px]="height" (window:resize)="onResize($event)">
-  <wj-flex-grid-column [header]="'Id'" [binding]="'Id'" [isReadOnly]="true">
-  </wj-flex-grid-column>
-  <wj-flex-grid-column [header]="'Caption'" [binding]="'Caption'" [width]="'*'"></wj-flex-grid-column>
-  <wj-flex-grid-column [header]="'Owner'" [binding]="'Owner'"></wj-flex-grid-column>
-  <wj-flex-grid-column [header]="'Discovery Date'" [binding]="'DiscoveryDate'"></wj-flex-grid-column>
-  <wj-flex-grid-column [header]="'Expiration Date'" [binding]="'ExpirationDate'"></wj-flex-grid-column>
-</wj-flex-grid>
+<p-dataTable [value]="cases"
+             scrollable="true" scrollHeight="{{height}}"
+             [globalFilter]="gb"
+             (window:resize)="onResize($event)">
+  <p-column field="Id" header="Id" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="Caption" header="Caption" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="Owner" header="Owner" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="DiscoveryDate" header="Discovery Date" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="ExpirationDate" header="Expiration Date" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+</p-dataTable>

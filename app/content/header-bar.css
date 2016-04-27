@@ -1,11 +1,10 @@
 #headerBar {
-    background-color: #0065FF;
+    background-color: #61b1fe;
     font-size: 17px;
 }
 
 #headerLogoContainer {
-    padding: 0px 5px;
-    background-color: white;
+    padding: 2px 5px;
 }
 
 #headerLogo {
