@@ -1,24 +1,37 @@
-<h1>Caraballo vs. Ventura-Campos</h1>
 <div class="container">
+    <h1 id="caseTitle">Caraballo vs. Ventura-Campos</h1>
     <div class="col-md-2">
         <p-menu>
             <ul>
-                <li><h3>File</h3></li>
-                <li><a data-icon="fa-plus"><span>New</span></a></li>
-                <li><a data-icon="fa-download"><span>Open</span></a></li>
-                <li><h3>Edit</h3></li>
-                <li><a data-icon="fa-refresh"><span>Undo</span></a></li>
-                <li><a data-icon="fa-repeat"><span>Redo</span></a></li>
+                <li><h3>Open Studies</h3></li>
+                <li><a><span class="menuItem">Browser Viewer</span></a></li>
+                <li><a><span class="menuItem">Java Viewer</span></a></li>
+                <li><h3>Case Details</h3></li>
+                <li><a (click)="showCaseDetailsDialog()"><span class="menuItem">View Details</span></a></li>
+                <li><h3>My Cases</h3></li>
+                <li><a (click)="showChangeCaseDialog()"><span class="menuItem">Change Case</span></a></li>
             </ul>
         </p-menu>
     </div>
     <div class="col-md-10">
         <p-dataTable [value]="cases">
-        <p-column field="Id" header="Id"></p-column>
-        <p-column field="Caption" header="Caption"></p-column>
-        <p-column field="Owner" header="Owner"></p-column>
-        <p-column field="DiscoveryDate" header="Discovery Date"></p-column>
-        <p-column field="ExpirationDate" header="Expiration Date"></p-column>
+            <p-column field="Id" header="Id"></p-column>
+            <p-column field="Caption" header="Caption"></p-column>
+            <p-column field="Owner" header="Owner"></p-column>
+            <p-column field="DiscoveryDate" header="Discovery Date"></p-column>
+            <p-column field="ExpirationDate" header="Expiration Date"></p-column>
         </p-dataTable>
     </div>
 </div>
+
+<p-dialog header="{{caseDetails.Caption}}" [(visible)]="displayCaseDetailsDialog" [modal]=true 
+          [resizable]=false [width]=500
+          showEffect="fade" hideEffect="fade" effectDuration="fast">
+    <case-details-dialog [caseDetails]="caseDetails"></case-details-dialog>
+</p-dialog>
+
+<p-dialog header="Case Access Console" [(visible)]="displayChangeCaseDialog" [modal]=true 
+          [resizable]=false [width]=500
+          showEffect="fade" hideEffect="fade" effectDuration="fast">
+    <change-case-dialog></change-case-dialog>
+</p-dialog>

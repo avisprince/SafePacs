@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 
-import {Case} from '../model/case';
+import {Case} from '../../model/case/case';
 
 @Injectable()
 export class CaseService {

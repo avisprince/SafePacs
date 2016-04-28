@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
-import {Case} from "../../model/case";
-import {CaseService} from '../../services/cases.service';
+import {Case} from "../../model/case/case";
+import {CaseService} from '../../services/cases/cases.service';
 
 import {DataTable} from 'primeng/primeng';
 import {Column} from 'primeng/primeng';
