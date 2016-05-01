@@ -1,7 +1,6 @@
 import {Component, Input, OnChanges, SimpleChange} from 'angular2/core';
 
 import {Study} from "../../model/study/study";
-
 import {StudiesService} from '../../services/studies/studies.service';
 
 import {DataTable} from 'primeng/primeng';

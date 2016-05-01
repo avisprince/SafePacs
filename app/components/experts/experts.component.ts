@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
 
-import {Study} from "../../model/study/study";
 import {CaseDetails} from "../../model/case-details/case-details";
-
-import {StudiesService} from '../../services/studies/studies.service';
 import {CaseDetailsService} from "../../services/case-details/case-details.service";
 
 import {Menu} from 'primeng/primeng';
@@ -19,19 +16,22 @@ import {ChangeCaseDialogComponent} from '../change-case-dialog/change-case-dialo
     directives: [Menu, Dialog, StudiesTableComponent, CaseDetailsDialogComponent, ChangeCaseDialogComponent]
 })
 export class ExpertsComponent {
+    private caseDetailsService: CaseDetailsService;
+    
     public caseId: string = "";
     public caseDetails: CaseDetails;
     public displayCaseDetailsDialog: boolean = false;
     public displayChangeCaseDialog: boolean = false;
     
     constructor() {
+        this.caseDetailsService = new CaseDetailsService();
+        
         // Show the change case dialog when user loads the page
         this.showChangeCaseDialog();
     }
     
     getCaseInformation(): void {
-        var caseDetailsService = new CaseDetailsService();
-        this.caseDetails = caseDetailsService.getCaseDetails(this.caseId);
+        this.caseDetails = this.caseDetailsService.getCaseDetails(this.caseId);
     }
     
     showCaseDetailsDialog(): void {
