@@ -1,5 +1,5 @@
 export interface CaseDetails {    
-    CaseId: number;
+    CaseId: string;
     Caption: string;
     ExpertAccessCode: string;
     FirstName: string;

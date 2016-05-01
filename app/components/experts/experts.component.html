@@ -1,5 +1,5 @@
-<div class="container">
-    <h1 id="caseTitle">Caraballo vs. Ventura-Campos</h1>
+<div class="container" *ngIf="caseId.length > 0">
+    <h1 id="caseTitle">{{caseDetails.Caption}}</h1>
     <div class="col-md-2">
         <p-menu>
             <ul>
@@ -14,24 +14,25 @@
         </p-menu>
     </div>
     <div class="col-md-10">
-        <p-dataTable [value]="cases">
-            <p-column field="Id" header="Id"></p-column>
-            <p-column field="Caption" header="Caption"></p-column>
-            <p-column field="Owner" header="Owner"></p-column>
-            <p-column field="DiscoveryDate" header="Discovery Date"></p-column>
-            <p-column field="ExpirationDate" header="Expiration Date"></p-column>
-        </p-dataTable>
+        <studies-table [caseId]="caseId"></studies-table>
     </div>
 </div>
 
-<p-dialog header="{{caseDetails.Caption}}" [(visible)]="displayCaseDetailsDialog" [modal]=true 
+<p-dialog *ngIf="caseId.length > 0" header="{{caseDetails.Caption}}" [(visible)]="displayCaseDetailsDialog" [modal]=true 
           [resizable]=false [width]=500
           showEffect="fade" hideEffect="fade" effectDuration="fast">
     <case-details-dialog [caseDetails]="caseDetails"></case-details-dialog>
 </p-dialog>
 
-<p-dialog header="Case Access Console" [(visible)]="displayChangeCaseDialog" [modal]=true 
-          [resizable]=false [width]=500
+<p-dialog *ngIf="caseId.length == 0" header="Case Access Console" [(visible)]="displayChangeCaseDialog" [modal]=true 
+          [closeOnEscape]=false [closable]=false
+          [resizable]=false [width]=300
           showEffect="fade" hideEffect="fade" effectDuration="fast">
-    <change-case-dialog></change-case-dialog>
+    <change-case-dialog (changeSelectedCase)="changeSelectedCase($event)"></change-case-dialog>
+</p-dialog>
+
+<p-dialog *ngIf="caseId.length > 0" header="Case Access Console" [(visible)]="displayChangeCaseDialog" [modal]=true 
+          [resizable]=false [width]=300
+          showEffect="fade" hideEffect="fade" effectDuration="fast">
+    <change-case-dialog (changeSelectedCase)="changeSelectedCase($event)"></change-case-dialog>
 </p-dialog>

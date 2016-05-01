@@ -1,0 +1,10 @@
+<p-dataTable [value]="studies" scrollable="true" scrollHeight="500">
+    <p-column style="width: 40px;">
+        <template #study="rowData">
+            <p-checkbox name="selectedStudies" value={{study.Id}} [(ngModel)]="selectedStudies"></p-checkbox>
+        </template>
+    </p-column>
+    <p-column field="Id" header="Id"></p-column>
+    <p-column field="Type" header="Type"></p-column>
+    <p-column field="Description" header="Description"></p-column>
+</p-dataTable>

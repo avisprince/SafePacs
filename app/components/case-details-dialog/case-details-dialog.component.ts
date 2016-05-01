@@ -7,6 +7,5 @@ import {CaseDetails} from "../../model/case-details/case-details";
     templateUrl: 'app/components/case-details-dialog/case-details-dialog.component.html',
 })
 export class CaseDetailsDialogComponent {
-    @Input()
-    caseDetails: CaseDetails;
+    @Input() caseDetails: CaseDetails;
 }

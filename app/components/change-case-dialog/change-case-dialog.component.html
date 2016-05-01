@@ -1,8 +1,8 @@
 <p>
     Enter your <b>Case Access Code</b> or <b>Case ID</b> below to review your studies.
 </p>
-<input type="text" pInputText />
-<button pButton type="button" (click)="lookupStudy()" label="Lookup Studies"></button>
+<input type="text" pInputText [(ngModel)]="caseAccessCode" (keyup)="onKeyUp($event)" />
+<button pButton type="button" (click)="lookupCase()" label="Lookup Studies" [disabled]="!caseAccessCode"></button>
 <p>
     If you do not have a Case Access Code or a Case ID, 
     please contact the user (eg. attorney) who assigned the studies to you.

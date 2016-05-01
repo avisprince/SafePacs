@@ -4,10 +4,10 @@ import {CaseDetails} from '../../model/case-details/case-details';
 
 @Injectable()
 export class CaseDetailsService {
-    getCaseDetails() : CaseDetails {
+    getCaseDetails(caseId: string) : CaseDetails {
         return {
-            CaseId: 123456,
-            Caption: "Caption",
+            CaseId: caseId,
+            Caption: "Caption for case:" + caseId,
             ExpertAccessCode: "Expert Access Code",
             FirstName: "First Name",
             MiddleName: "Middle Name",
